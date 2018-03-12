@@ -2,6 +2,7 @@
 * @author Alexander Guo
 *
 */
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Scanner;
 
 //use a javadoc comments to get a nice looking documentation
 public class Exam {
-	private String title;
+	public String title;
 	private String name;
 	private String netid;
 	private List<Question> questions = new ArrayList<Question>();
@@ -19,8 +20,17 @@ public class Exam {
 	 * @param e string that titles the exam
 	 *
 	 */
-	Exam(String e){
+	public Exam(String e){
 		title = e;
+	}
+	/**
+	 * exam constructor with Scanner
+	 * @param s is a Scanner to be utilized in scanning in to make a new exam
+	 *
+	 */
+	public Exam(Scanner s){
+		title = s.nextLine();
+		
 	}
 	/**
 	 * sets the netid of the person taking the exam
@@ -137,5 +147,14 @@ public class Exam {
 			total+=q.getValue();
 		}
 		return total;
+	}
+	public void save(PrintWriter p) {
+		
+	}
+	public void saveStudentAnswers(PrintWriter p) {
+		
+	}
+	public void restoreStudentAnswers(PrintWriter p) {
+		
 	}
 }

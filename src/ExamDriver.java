@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
 * <h1>Exam Maker</h1>
 * Simple exam maker that is built off of answers and questions classes.
@@ -10,9 +14,13 @@
 
 public class ExamDriver {
 
-	public static void main(String[] args) {
-		Exam e = new Exam("Exam1");
-		
+	public static void main(String[] args) throws FileNotFoundException{
+	    
+	    Scanner input = new Scanner(new File("sample_exam_file.txt"));
+	    
+	    Exam e = new Exam(input);
+	    System.out.println(e.title);
+	/*	
 		MCSAQuestion q = new MCSAQuestion("What is your name?", 1);
 		Answer a = q.getNewAnswer("Alex", 1);
 		q.addAnswer((MCAnswer)a);
@@ -59,6 +67,7 @@ public class ExamDriver {
 		System.out.println("Overall Score is: " + e.getValue());
 		System.out.println("Questions Values Report:");
 		e.reportQuestionValues();
+		*/
 //		for(int i = 1; i <= e.getNumOfQs(); i++) {
 //			System.out.println("Q" + i + ". contributed: " + e.getQuestion(i).getValue());
 //		}

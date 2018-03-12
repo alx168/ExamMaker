@@ -1,9 +1,12 @@
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class SAAnswer extends Answer  {
 	protected String text;
 	public SAAnswer(String t) {
 		text = t;
 	}
+	public SAAnswer(Scanner s) {}
 	public void print() {
 		System.out.println(text);
 	}
@@ -23,4 +26,5 @@ public class SAAnswer extends Answer  {
 		}
 		//return 0;
 	}
+	public void save(PrintWriter p) {}
 }

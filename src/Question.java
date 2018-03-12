@@ -1,3 +1,6 @@
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 /**
  * 
  * @author Alexander Guo
@@ -24,6 +27,14 @@ public abstract class Question {
 		maxValue = maxV;
 	}
 	/**
+	 * question constructor with a scanner to read in from a file and make a new question
+	 *
+	 * @param s the scanner containing the info for question construction 
+	 */
+	public Question(Scanner s) {
+		
+	}
+	/**
 	 * prints out the question
 	 *
 	 */
@@ -40,4 +51,11 @@ public abstract class Question {
 		return maxValue * studentAnswer.getCredit(rightAnswer);
 	}
 	
+	public abstract void save(PrintWriter p);
+	public void saveStudentAnswer(PrintWriter p) {
+		
+	}
+	public void restoreStudentAnswers(PrintWriter p) {
+		
+	}
 }

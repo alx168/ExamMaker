@@ -15,10 +15,6 @@ public class MCSAAnswer extends MCAnswer{
 		}else {
 			return 0.0;
 		}
-//		}else {
-//			System.out.println("Answer not instanceof MCSAAnswer");
-//			return 0.0;
-//		}
 	}
 	
 }

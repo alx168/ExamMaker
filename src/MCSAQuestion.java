@@ -1,8 +1,12 @@
+import java.io.PrintWriter;
 import java.util.Scanner;
 public class MCSAQuestion extends MCQuestion {
 
-	MCSAQuestion(String t, double max) {
+	public MCSAQuestion(String t, double max) {
 		super(t, max);
+	}
+	public MCSAQuestion(Scanner s){
+		super(s);
 	}
 	public Answer getNewAnswer(){
 		System.out.println("What is the new Answer to " + text);
@@ -46,7 +50,10 @@ public class MCSAQuestion extends MCQuestion {
 		return (Answer)(answers.get(index));
 	}
 	public double getValue() {
-		return maxValue * studentAnswer.getCredit(rightAnswer);
+		return super.getValue((MCAnswer)studentAnswer);
+	}
+	public void save(PrintWriter p) {
+		
 	}
 	
 }

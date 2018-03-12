@@ -1,8 +1,12 @@
+import java.io.PrintWriter;
 import java.util.*;
 public class SAQuestion extends Question{
 
 	public SAQuestion(String t, double maxV) {
 		super(t, maxV);
+	}
+	public SAQuestion(Scanner s) {
+		super(s);
 	}
 	public Answer getNewAnswer() {
 		System.out.println("Please input an answer to " + text);
@@ -25,6 +29,11 @@ public class SAQuestion extends Question{
 	}
 	public double getValue() {
 		return maxValue * studentAnswer.getCredit(rightAnswer);
+	}
+	
+	public void save(PrintWriter p) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

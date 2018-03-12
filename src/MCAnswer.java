@@ -1,7 +1,8 @@
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public abstract class MCAnswer extends Answer{
 	protected String text;
-	protected boolean selected;
 	protected double creditIfSelected;
 //	protected String getText() {
 //		return text;
@@ -10,10 +11,16 @@ public abstract class MCAnswer extends Answer{
 		text = t;
 		creditIfSelected = cIfSelected;
 	}
+	public MCAnswer(Scanner s) {}
 	public void print() {
 		System.out.println(text);
 	}
-	public void setSelected(boolean s) {
-		selected = s;
+	public double getCredit(Answer rightAnswer) {
+		if(rightAnswer == this) {
+			return ((MCAnswer)rightAnswer).creditIfSelected;
+		}else {
+			return 0.0;
+		}
 	}
+	public void save(PrintWriter p) {}
 }
